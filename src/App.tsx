@@ -175,10 +175,13 @@ function App() {
   const isSelectedValue = (date: Date) => isSameDay(date, selectedDate);
 
   return (
+    <div className=''>
     <DndProvider backend={HTML5Backend}>
-      <div className="min-h-screen bg-background p-8">
-        <div className="max-w-7xl mx-auto space-y-8">
-          <CalendarHeader
+      <div className="  mx-auto max-w-full md:w-[800px]  md:ml-[40%] bg-gradient-to-br from-purple-100 to-blue-100 p-4 sm:p-6 md:p-8">
+        <div className=" mx-auto">
+          <div className="bg-white rounded-xl shadow-2xl ">
+            <div className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
+            <CalendarHeader
             currentDate={currentDate}
             onPreviousMonth={handlePreviousMonth}
             onNextMonth={handleNextMonth}
@@ -199,6 +202,8 @@ function App() {
               onDrop: handleDrop,
             }}
           />
+            </div>
+          </div>
         </div>
 
         <EventDialog
@@ -221,6 +226,7 @@ function App() {
         <Toaster />
       </div>
     </DndProvider>
+    </div>
   );
 }
 
