@@ -19,7 +19,6 @@ interface CalendarHeaderProps {
   onExport: (format: 'json' | 'csv') => void;
 }
 
-import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 export function CalendarHeader({
   currentDate,

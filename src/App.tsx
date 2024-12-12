@@ -15,7 +15,6 @@ import {
   isSameDay,
   isSameMonth,
   isToday,
-  parseISO,
   sub,
 } from 'date-fns';
 import { useEffect, useState } from 'react';
@@ -170,6 +169,11 @@ function App() {
     );
   });
 
+  // Precompute the boolean values for isCurrentMonth, isToday, isSelected
+  const isCurrentMonthValue = (date: Date) => isSameMonth(date, currentDate);
+  const isTodayValue = (date: Date) => isToday(date);
+  const isSelectedValue = (date: Date) => isSameDay(date, selectedDate);
+
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="min-h-screen bg-background p-8">
@@ -187,9 +191,9 @@ function App() {
           <CalendarGrid
             days={calendarDays}
             dayProps={{
-              isCurrentMonth: (date) => isSameMonth(date, currentDate),
-              isToday: isToday,
-              isSelected: (date) => isSameDay(date, selectedDate),
+              isCurrentMonth: isCurrentMonthValue(selectedDate), // Pass computed boolean
+              isToday: isTodayValue(selectedDate), // Pass computed boolean
+              isSelected: isSelectedValue(selectedDate), // Pass computed boolean
               events: filteredEvents,
               onSelectDate: handleSelectDate,
               onDrop: handleDrop,
