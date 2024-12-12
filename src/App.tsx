@@ -177,10 +177,10 @@ function App() {
   return (
     <div className=''>
     <DndProvider backend={HTML5Backend}>
-      <div className="  mx-auto max-w-full md:w-[800px]  md:ml-[40%] bg-gradient-to-br from-purple-100 to-blue-100 p-4 sm:p-6 md:p-8">
+      <div className="  mx-auto max-w-full md:w-screen bg-gradient-to-br from-purple-100 to-blue-100 p-4 sm:p-6 md:p-8">
         <div className=" mx-auto">
-          <div className="bg-white rounded-xl shadow-2xl ">
-            <div className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
+          <div className="bg-white rounded-xl shadow-2xl max-w-[1000px] mx-auto">
+            <div className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8 w-full">
             <CalendarHeader
             currentDate={currentDate}
             onPreviousMonth={handlePreviousMonth}

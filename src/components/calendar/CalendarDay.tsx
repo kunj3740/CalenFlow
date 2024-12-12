@@ -35,7 +35,7 @@ export const CalendarDay: React.FC<DayProps> = ({
     <div
       ref={drop}
       className={cn(
-        'h-20 xs:h-24 sm:h-28 md:h-32 p-1 transition-all duration-200',
+        'h-20 xs:h-20 sm:h-24 md:h-26 p-1 transition-all duration-200',
         {
           'bg-blue-100': isSelected,
           'cursor-pointer hover:bg-gray-50': !isSelected,
@@ -79,7 +79,7 @@ function EventCard({ event }: { event: Event }) {
   return (
     <div
       className={cn(
-        'text-[10px] p-0.5 rounded-sm truncate',
+        'text-[15px] p-0.5 rounded-sm truncate',
         categoryColors[event.category]
       )}
     >
