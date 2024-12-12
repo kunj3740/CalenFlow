@@ -57,3 +57,10 @@ Ensure you have the following installed:
    ```bash  
    git clone https://github.com/your-username/dynamic-event-calendar.git  
    cd dynamic-event-calendar  
+
+### **Steps to Run Locally**  
+2. **Clone the Repository**  
+   ```bash  
+   npm i 
+   npm run dev
+
