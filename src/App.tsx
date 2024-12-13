@@ -52,7 +52,14 @@ function App() {
 
   const handleSelectDate = (date: Date) => {
     setSelectedDate(date);
-    setIsEventListOpen(true);
+    const eventDate = format(date, 'yyyy-MM-dd');
+    const eventsForDay = events.filter(event => event.date === eventDate);
+    
+    if (eventsForDay.length === 0) {
+      setIsEventDialogOpen(true);
+    } else {
+      setIsEventListOpen(true);
+    }
   };
 
   const handleAddEvent = () => {
@@ -231,3 +238,4 @@ function App() {
 }
 
 export default App;
+

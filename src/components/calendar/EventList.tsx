@@ -8,6 +8,7 @@ import {
 import { Event } from '@/types/calendar';
 import { format } from 'date-fns';
 import { Edit2, Trash2 } from 'lucide-react';
+import { useEffect } from 'react';
 
 interface EventListProps {
   isOpen: boolean;
@@ -29,7 +30,9 @@ export function EventList({
   const dayEvents = events
     .filter((event) => event.date === format(selectedDate, 'yyyy-MM-dd'))
     .sort((a, b) => (a.startTime > b.startTime ? 1 : -1));
-
+  useEffect( () => {
+    
+  } ,[])
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
       <SheetContent>
