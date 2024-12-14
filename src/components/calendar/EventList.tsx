@@ -53,12 +53,12 @@ export function EventList({
               <div className="flex items-center justify-between">
                 <h3 className="font-medium">{event.title}</h3>
                 <div className="flex gap-2">
-                  <button
+                  <button className='bg-black text-white'
                     onClick={() => onEditEvent(event)}
                   >
                     <Edit2 className="h-4 w-4" />
                   </button>
-                  <button
+                  <button className='bg-black text-white'
                     onClick={() => onDeleteEvent(event.id)}
                   >
                     <Trash2 className="h-4 w-4" />
